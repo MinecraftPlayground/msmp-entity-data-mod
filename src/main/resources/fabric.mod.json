@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "msmp-entity-data",
+  "version": "${version}",
+  "name": "MSMP Entity Data",
+  "description": "This Minecraft Fabric Mod Extends the Minecraft Server Management Protocol (MSMP) forwarding every server console log event to all connected clients as a JSON-RPC 2.0 notification.",
+  "authors": [],
+  "contact": {},
+  "license": "LGPL-3.0-only",
+  "icon": "assets/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "dev.loat.msmp_entity_data.MSMPEntityData"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "msmp-lib": "*"
+  },
+  "custom": {
+    "mc-publish": {
+      "modrinth": {
+        "project_id": "---",
+        "loaders": [
+          "fabric"
+        ]
+      }
+    }
+  }
+}
