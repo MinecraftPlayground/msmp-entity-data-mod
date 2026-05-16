@@ -13,21 +13,21 @@ import net.minecraft.server.jsonrpc.api.Schema;
  * <pre>{@code
  * // Player:
  * {
- *   "entity":     { "id": "069a79f4-44e9-4726-a5be-fca90e38aaf5", "name": "Steve" },
- *   "health":     20.0,
+ *   "entity": { "name": "Steve" },
+ *   "health": 20.0,
  *   "max_health": 20.0
  * }
  *
  * // Non-player entity:
  * {
- *   "entity":     { "id": "1b3e9f2a-12cd-4b56-a832-ff1234567890" },
- *   "health":     14.0,
+ *   "entity": { "id": "1b3e9f2a-12cd-4b56-a832-ff1234567890" },
+ *   "health": 14.0,
  *   "max_health": 20.0
  * }
  * }</pre>
  *
- * @param entity    Reference to the entity; always includes UUID, name only for players
- * @param health    The entity's current health points
+ * @param entity Reference to the entity; always includes UUID, name only for players
+ * @param health The entity's current health points
  * @param maxHealth The entity's maximum health points
  */
 public record HealthResponse(EntityRef entity, double health, double maxHealth) {

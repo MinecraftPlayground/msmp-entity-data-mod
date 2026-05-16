@@ -22,7 +22,7 @@ import java.util.Optional;
  * { "id": "1b3e9f2a-12cd-4b56-a832-ff1234567890" }
  * }</pre>
  *
- * @param id   The entity's UUID as a string, always present
+ * @param id The entity's UUID as a string, always present
  * @param name The player's in-game name, only present if the entity is a player
  */
 public record EntityRef(String id, Optional<String> name) {
