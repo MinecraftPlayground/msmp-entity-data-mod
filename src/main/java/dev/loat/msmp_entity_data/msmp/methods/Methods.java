@@ -14,6 +14,8 @@ import dev.loat.msmp_entity_data.msmp.methods.location.Location;
  */
 public class Methods {
 
+    private Methods() {}
+
     /**
      * Registers all {@code entity_data} methods on the given {@link MSMPNamespace}.
      *
