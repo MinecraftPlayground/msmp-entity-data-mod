@@ -60,8 +60,8 @@ public class Location {
                         entity.getX(),
                         entity.getY(),
                         entity.getZ(),
-                        entity.getYRot(),
-                        entity.getXRot()
+                        entity.getXRot(),
+                        entity.getYRot()
                     );
                 } catch (IllegalArgumentException e) {
                     Logger.warning("entity_data:location - " + e.getMessage());

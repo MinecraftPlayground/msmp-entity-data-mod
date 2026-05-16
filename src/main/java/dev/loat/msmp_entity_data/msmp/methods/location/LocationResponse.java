@@ -39,10 +39,10 @@ import net.minecraft.server.jsonrpc.api.Schema;
  * @param x The entity's X coordinate
  * @param y The entity's Y coordinate
  * @param z The entity's Z coordinate
- * @param yaw The entity's yaw rotation in degrees (horizontal, -180 to 180)
  * @param pitch The entity's pitch rotation in degrees (vertical, -90 to 90)
+ * @param yaw The entity's yaw rotation in degrees (horizontal, -180 to 180)
  */
-public record LocationResponse(EntityRef entity, String dimension, double x, double y, double z, double yaw, double pitch) {
+public record LocationResponse(EntityRef entity, String dimension, double x, double y, double z, double pitch, double yaw) {
 
     /**
      * Codec for serializing and deserializing {@link LocationResponse} instances.
@@ -53,8 +53,8 @@ public record LocationResponse(EntityRef entity, String dimension, double x, dou
         Codec.DOUBLE.fieldOf("x").forGetter(LocationResponse::x),
         Codec.DOUBLE.fieldOf("y").forGetter(LocationResponse::y),
         Codec.DOUBLE.fieldOf("z").forGetter(LocationResponse::z),
-        Codec.DOUBLE.fieldOf("yaw").forGetter(LocationResponse::yaw),
-        Codec.DOUBLE.fieldOf("pitch").forGetter(LocationResponse::pitch)
+        Codec.DOUBLE.fieldOf("pitch").forGetter(LocationResponse::pitch),
+        Codec.DOUBLE.fieldOf("yaw").forGetter(LocationResponse::yaw)
     ).apply(i, LocationResponse::new));
 
     /**
@@ -66,6 +66,6 @@ public record LocationResponse(EntityRef entity, String dimension, double x, dou
         .withField("x", Schema.NUMBER_SCHEMA)
         .withField("y", Schema.NUMBER_SCHEMA)
         .withField("z", Schema.NUMBER_SCHEMA)
-        .withField("yaw", Schema.NUMBER_SCHEMA)
-        .withField("pitch", Schema.NUMBER_SCHEMA);
+        .withField("pitch", Schema.NUMBER_SCHEMA)
+        .withField("yaw", Schema.NUMBER_SCHEMA);
 }
